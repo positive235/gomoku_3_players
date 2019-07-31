@@ -1,5 +1,5 @@
 # GOMOKU for 3 players
-GOMOKU for 3 players: built with pygame
+[GOMOKU for 3 players: built with pygame](https://github.com/positive235/gomoku_3_players)
 
 ## How to run
 ```bash
