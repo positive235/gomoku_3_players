@@ -12,3 +12,5 @@ pygame==1.9.6
 ```
 
 ## Game screenshots
+
+![gomoku for 3 players](https://github.com/positive235/100-DAYS-OF-CODE-R0/blob/master/gomoku3p_gif.gif?raw=true)
