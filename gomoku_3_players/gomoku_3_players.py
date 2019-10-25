@@ -8,7 +8,7 @@ from gomoku_3_players.palette_wh import COLOR_BLACK, COLOR_WHITE, COLOR_BLUE, \
 
 class Gomoku:
     def __init__(self):
-        self.title = "GOMOKU for 3 players"
+        self.title = "GOMOKU for 3 players (4-in-a-row)"
         self.screen = pygame.display.set_mode((900, W_H + 45))
         pygame.display.set_caption(self.title)
         self.screen.fill(COLOR_BOARD)
@@ -128,20 +128,21 @@ class Gomoku:
             elif self.play_order == "W": self.play_order = "K"
         return self.stone, self.play_order
 
+
     def score(self, stone, color_name, player_score, play_order):
         self.stone, self.color_name, self.player_score = stone, color_name, player_score
         self.play_order = play_order
         self.result = None
-        if len(self.stone[self.color_name]) >= 5:
+        if len(self.stone[self.color_name]) >= 4:
 
             stone_sort = sorted(self.stone[self.color_name])
 
             for x, y in stone_sort:
                 cnt = 0
-                for i in range(1, 5):
+                for i in range(1, 4):
                     if (x, y + 45 * i) in stone_sort:
                         cnt += 1
-                        if cnt == 4:
+                        if cnt == 3:
                             self.player_score += 1
                             self.play_order = None
                             self.result = True
@@ -150,10 +151,10 @@ class Gomoku:
                     else: break
 
                 cnt = 0
-                for i in range(1, 5):
+                for i in range(1, 4):
                     if (x + 45 * i, y) in stone_sort:
                         cnt += 1
-                        if cnt == 4:
+                        if cnt == 3:
                             self.player_score += 1
                             self.play_order = None
                             self.result = True
@@ -161,19 +162,19 @@ class Gomoku:
                     else: break
 
                 cnt = 0
-                for i in range(1, 5):
+                for i in range(1, 4):
                     if (x + 45 * i, y+45 * i) in stone_sort:
                         cnt += 1
-                        if cnt == 4:
+                        if cnt == 3:
                             self.player_score += 1
                             self.play_order = None
                             self.result = True
                             break
                 cnt = 0
-                for i in range(1, 5):
+                for i in range(1, 4):
                     if (x + 45 * i, y - 45 * i) in stone_sort:
                         cnt += 1
-                        if cnt == 4:
+                        if cnt == 3:
                             self.player_score += 1
                             self.play_order = None
                             self.result = True
