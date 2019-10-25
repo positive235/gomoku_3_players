@@ -12,5 +12,3 @@ pygame==1.9.6
 ```
 
 ## Game screenshots
-
-![alt text](https://raw.githubusercontent.com/positive235/100-DAYS-OF-CODE/master/gomoku_3p_190527.gif)
